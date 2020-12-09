@@ -21,7 +21,7 @@ exports.add = async (req, res) => {
       const checkEmail = new RegExp (/^[a-zA-Z0-9!#$&_*?^{}~-]+(\.[a-zA-Z0-9!#$&_*?^{}~-]+)*@([a-z0-9]+([a-z0-9]*)\.)+[a-zA-Z]+$/);
       const validEmail = checkEmail.test(email);
 
-      if (fileExt == 'jpg' || fileExt =='png' || fileExt =='gif' && validTitle == true, validAuthor == true, validEmail == true) {
+      if (fileExt == 'jpg' || fileExt =='png' || fileExt =='gif' && validTitle == true && validAuthor == true && validEmail == true) {
         const newPhoto = new Photo({ title, author, email, src: fileName, votes: 0 });
         await newPhoto.save(); // ...save new photo in DB
         res.json(newPhoto);
